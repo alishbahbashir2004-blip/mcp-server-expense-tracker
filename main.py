@@ -98,7 +98,7 @@ async def summarize(start_date, end_date, category=None):  # Changed: added asyn
     except Exception as e:
         return {"status": "error", "message": f"Error summarizing expenses: {str(e)}"}
 
-@mcp.resource("expense:///categories", mime_type="application/json")  # Changed: expense:// → expense:///
+@mcp.resource("resource:///categories", mime_type="application/json")  # Changed: expense:// → expense:///
 def categories():
     try:
         # Provide default categories if file doesn't exist
